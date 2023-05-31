@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap'); /*These import will bring in fonts for the site to use*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+/*
+body {
+    padding-left: 11em;
+    font-family: Georgia, "Times New Roman",
+    Times, serif;
+    color: black;
+    background-color: #ffffff
+}
+
+ul.navbar {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+	position: absolute;
+    top: 2em;
+    left: 1em;
+    width: 10em
+}
+
+h1 {
+    font-family: Helvetica, Geneva, Arial,
+          SunSans-Regular, sans-serif
+}
+    
+ul.navbar li {
+    background: rgb(85, 84, 84);
+    margin: 0.5em 0;
+    padding: 0.3em;
+    border-right: 1em solid black
+}
+
+ul.navbar a {
+    text-decoration: none
+}
+
+a:link {
+    color: blue
+}
+
+a:visited {
+    color: purple
+}
+
+	address {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: thin dotted
+}
+
+*/
+
+
+
+/* Navigation */
+nav {
+	width: 100%; /*How wide the nav is*/
+	margin: 0 auto;
+	position: relative;
+	background-image: linear-gradient(#323232, #181818); /*This changes the colour of the navigations background*/
+	padding: 5px 0;
+	box-shadow: 0px 2px 0px #f6ad5f;
+}
+nav ul {
+	list-style: none;
+	text-align: center;
+}
+nav ul li {
+	display: inline-block; /*Displays how the links are positioned*/
+}
+nav ul li a {
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+	color: #c9c9c9; /*changes the colour of the navigation text*/
+	text-transform: capitalize;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	margin: 0 25px;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+	transition: all .5s;
+}
+nav ul li a:hover {
+	color: #fff; /*This changes the colour of the navigation text when hovered over*/
+}
+
+/* Underline Effect */
+nav.stroke ul li a,
+nav.fill ul li a {
+	position: relative;
+}
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 0%;
+	content: '.';
+	color: transparent;
+	background: #ffffff; /*This changes the colour of the dash below the nav text when hovered over*/
+	height: 1px;
+}
+
+nav.stroke ul li a.active:after { /*This code allows the nav to show the current active page by having a small underline*/
+	width: 10%;
+	height: 1.5px;
+}
+
+nav.stroke ul li a:hover:after { /*This code is for the end of the animation when hovering over a link, where the link is completely underlined*/
+  width: 100%;
+}
+
+
+nav.stroke ul li a.active { /*This code makes the link of the page that the user is currently on a yellowy orange */
+    color: #f6ad5f;
+}
+
+nav.stroke ul li a.active:after {
+    background: #f6ad5f;
+}
+
+@media (min-width: 769px) {
+    .nav > ul > li:not(:last-child) {
+        position: relative;
+    }
+
+    .nav > ul > li:not(:last-child) > a:after {
+        content: "";
+        height: 20px;
+        width: 1px;
+        background: red;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -10px; /* half of height */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* The dropdown container */
+.dropdown {
+    position:relative;
+    top: 5px;
+    float: left;
+    text-transform: capitalize;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+    margin: 0 25px;
+    
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #c9c9c9;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .nav a:hover, .dropdown:hover .dropbtn {
+    color: #fff;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #323232;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: #c9c9c9;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html,
+body {
+    margin: 0;
+}
+
+p,
+address {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+
+.logo {
+    position: absolute; /*Forces the position of the logo*/
+    top: 18px;
+	left: 20px;
+    z-index: 1; /*Puts the logo on a higher layer than my nav*/
+    width: 100px;
+    height: auto;
+}
+
+
+.site-name { /*This code is for the title of the site that is at the top of each page under the nav*/
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; /*Imported font*/
+    font-size: 30px;
+    font-weight: bold;
+	color: #000000;
+}
+
+.abouttitle {
+    padding-left: 10%;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    font-size: 40px;
+    padding-bottom: 40px;
+	color: #000000;
+}
+
+.underline {
+    position: relative;
+}
+.underline:before {
+    content: ""; /*Removes the content of the block, allows it to be just a underline with no collision*/
+    position: absolute; /*Forces the position and wont move*/
+    display: block;
+    bottom: -3px;
+	left: 15px;
+    width: 80%;
+    border-bottom: 1px solid #f6ad5f;
+}
